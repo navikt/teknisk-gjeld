@@ -1,0 +1,1 @@
+WIP prosjekt som skal kunne si noe om sunnhet i avhengigheter som brukes direkte av et repo
