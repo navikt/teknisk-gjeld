@@ -5,8 +5,16 @@ on:
       - main
     paths-ignore:
       - "*.md"
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
+    name: build
     permissions:
       contents: write # for dependency graph
     runs-on: ubuntu-latest
@@ -24,4 +32,24 @@ jobs:
       - name: Generate and submit dependency graph
         if: github.ref == 'refs/heads/main'
         uses: gradle/actions/dependency-submission@v6.4.0
+
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read # needs to read app descriptor
+      id-token: write # for nais deploy
+    needs: build
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+      - uses: nais/docker-build-push@v0
+        id: docker-push
+        with:
+          team: appsec
+          tag: custom_tag
+          push_image: false
+          pull: true
+
 

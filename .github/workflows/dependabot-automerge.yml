@@ -1,0 +1,24 @@
+name: Automerge Dependabot PRs
+
+on:
+  schedule:
+    - cron: '0 7 * * 1-5'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  automerge:
+    name: automerge
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # muse be able to apply dependency changes
+    steps:
+      - name: Automerge Dependabot PRs
+        uses: navikt/automerge-dependabot@v1.6.0
+        with:
+          token: ${{ github.token }}
