@@ -1,3 +1,5 @@
+package no.nav.tekniskgjeld
+
 import com.google.cloud.bigquery.BigQueryOptions
 import com.google.cloud.bigquery.JobInfo
 import com.google.cloud.bigquery.JobStatistics
@@ -6,6 +8,7 @@ import com.google.cloud.bigquery.QueryParameterValue
 import java.time.Duration
 import java.time.Instant
 import kotlin.system.exitProcess
+import kotlin.text.get
 
 // Sikring: spørringen avbrytes av BigQuery hvis den ville skannet mer enn dette.
 // En kjøring for hele appsec-teamet (~1100 pakker) skanner ca. 6 GB.

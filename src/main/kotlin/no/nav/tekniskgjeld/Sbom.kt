@@ -1,3 +1,5 @@
+package no.nav.tekniskgjeld
+
 import com.google.auth.oauth2.GoogleCredentials
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonArray
