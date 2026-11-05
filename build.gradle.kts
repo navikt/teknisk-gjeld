@@ -16,6 +16,6 @@ dependencies {
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("no.nav.tekniskgjeld.MainKt")
     applicationDefaultJvmArgs = listOf("--enable-native-access=ALL-UNNAMED")
 }

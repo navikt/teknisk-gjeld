@@ -20,7 +20,7 @@ jobs:
           distribution: temurin
       - uses: gradle/actions/setup-gradle@v6.4.0
       - name: Test
-        run: ./gradlew build
+        run: ./gradlew test installDist
       - name: Generate and submit dependency graph
         if: github.ref == 'refs/heads/main'
         uses: gradle/actions/dependency-submission@v6.4.0
