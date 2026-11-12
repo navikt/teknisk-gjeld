@@ -21,11 +21,11 @@ jobs:
       - uses: actions/dependency-review-action@v5.0.0
         with:
           fail-on-severity: high # Fail if introducing high or critical vulnerabilities
-      - uses: actions/setup-java@v6.1.0
+      - uses: actions/setup-java@v6.2.0
         with:
           java-version: 25
           distribution: temurin
           cache: gradle
-      - uses: gradle/actions/setup-gradle@v6.4.0
+      - uses: gradle/actions/setup-gradle@v6.4.1
       - name: Test & build
         run: ./gradlew test build
