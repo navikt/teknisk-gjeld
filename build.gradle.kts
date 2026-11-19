@@ -12,7 +12,7 @@ dependencies {
     implementation(platform("com.google.cloud:libraries-bom:26.93.0"))
     implementation("com.google.cloud:google-cloud-bigquery")
     implementation("com.google.auth:google-auth-library-oauth2-http")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.12.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.13.0")
 }
 
 application {
