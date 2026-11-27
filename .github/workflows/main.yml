@@ -44,7 +44,7 @@ jobs:
       - uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
-      - uses: nais/docker-build-push@v0
+      - uses: nais/docker-build-push@v1
         id: docker-push
         with:
           team: appsec
